@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Gradebook </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h1>Gradebook</h1>
+
+
+      <form>
+                <label for="firstName">Enter first name:</label>
+                <input type="text" id = "firstName" name="firstName"  required="required"><br><br>
+
+                <label for="lastName">Enter last name:</label>
+                <input type="text" id = "lastName" name="lastName" required="required"><br><br>
+
+                 <label for="pointsEarned">Enter points earned:</label>
+                  <input type="number" id = "pointsEarned" name="pointsEarned" min = "0" max= "100" required="required"><br><br>
+
+                <label for="pointsPossible">Enter possible points:</label>
+                 <input type="number" id = "pointsPossible" name="pointsPossible" min = "0" max= "100" required="required"><br><br>
+
+                 <button id="button">Submit</button>
+
+      </form>
+
+
+
+
+    <table class="table">
+
+        <h1>Student Information</h1>
+
+        <tr>
+            <td>First Name:<p id="firstNameOutput"><span id ="student.firstN"></span></p></td>
+        </tr>
+
+        <tr>
+            <td>Last Name:<p id="lastNameOutput"><span id ="student.lastN"></span></p></td>
+        </tr>
+
+        <tr>
+            <td>Student Percentage: <p id="percentOutput"><span id ="student.percentage"></span></p></td>
+
+        </tr>
+
+        <tr>
+            <td>Student Grade:<p id="gradeOutput"><span id ="student.letterGrade"></span></p></td>
+
+        </tr>
+
+
+
+
+    </table>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<script src="code.js"></script>
+</body>
+</html>
