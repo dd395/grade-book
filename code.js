@@ -1,47 +1,96 @@
 $(document).ready(function () {
     $("form").submit(createStudent);
 
+    $("#sortName").click(sortStudentsByName);
+   $("#sortPercent").click(sortStudentsByPercent);
+
+console.log("start student");
+
+    var students =[];
 
 
 
-    function createStudent(event){
+    function createStudent(event) {
         event.preventDefault();
-
-        var firstName = $("#firstName").val();
-        var lastName = $("#lastName").val();
-        var pointsEarned = $("#pointsEarned").val();
-        var pointsPossible = $("#pointsPossible").val();
+        var outputObj = {
+            gradeText: "Grade:"
+        };
 
 
-        var percent = ((pointsEarned/pointsPossible)*100).toFixed(2);
-        var grade;
+        outputObj.firstName = $("#firstName").val();
+        outputObj.lastName = $("#lastName").val();
+        outputObj.pointsEarned = $("#pointsEarned").val();
+        outputObj.pointsPossible = $("#pointsPossible").val();
 
 
-        if (percent >=90) {
-            grade = "A";
-        } else if (percent >=80) {
-            grade ="B";
-        } else if (percent >= 70 ) {
-           grade = "C";
-        } else if (percent >= 60) {
-            grade = "D";
+        outputObj.percent = ((outputObj.pointsEarned / outputObj.pointsPossible) * 100).toFixed(2);
+        outputObj.percentText = outputObj.percent + "%"
+
+
+        if (outputObj.percent >= 90) {
+            outputObj.grade = "A";
+        } else if (outputObj.percent >= 80) {
+            outputObj.grade = "B";
+        } else if (outputObj.percent >= 70) {
+            outputObj.grade = "C";
+        } else if (outputObj.percent >= 60) {
+            outputObj.grade = "D";
         } else {
-            grade ="F";
+            outputObj.grade = "F";
         }
 
 
-        var student = {};
-        student.firstName = firstName;
-        student.lastName = lastName;
-        student.percentage = percent;
-        student.letterGrade = grade;
+        students.push(outputObj)
+        var output = ""
+        for (var studentItem of students) {
+            output += (`${studentItem.firstName} ${studentItem.lastName} "${studentItem.grade}"  ${studentItem.percent}%`)
+        }
 
-        $("#firstNameOutput").text(student.firstName);
-        $("#lastNameOutput").text(student.lastName);
-        $("#percentOutput").text(student.percentage);
-        $("#gradeOutput").text(student.letterGrade);
+        $("#outputFirst").text(output)
 
-    }});
+        $("#first").show()
+        $("#last").show()
+    }
+
+
+    function sortStudentsByName(a, b) {
+
+        if (a.name < b.name)
+            return -1;
+        else if (a.name > b.name)
+            return 1;
+        else
+            return 0;
+    }
+
+
+    students.sort(sortStudentsByName);
+    $("#outputSortByName").text(students.sort(sortStudentsByName))
+
+
+    function sortStudentsByPercent(a, b) {
+
+        if (a.percent < b.percent)
+            return -1;
+        else if (a.percent > b.percent)
+            return 1;
+        else
+            return 0;
+
+        }
+
+        students.sort(sortStudentsByPercent);
+
+    $("#outputSortByPercent").text(students.sort(sortStudentsByPercent))
+
+
+
+
+
+
+        console.log("end student");
+
+    })
 
 
 

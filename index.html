@@ -22,39 +22,27 @@
                 <label for="pointsPossible">Enter possible points:</label>
                  <input type="number" id = "pointsPossible" name="pointsPossible" min = "0" max= "100" required="required"><br><br>
 
-                 <button id="button">Submit</button>
-
-      </form>
-
-
+                 <button id="button">Add Entry</button>
+                 <button id="sortName">Sort By Student Name</button>
+                 <button id="sortPercent">Sort By Percentage</button>
 
 
     <table class="table">
 
         <h1>Student Information</h1>
-
+        <br>
         <tr>
-            <td>First Name:<p id="firstNameOutput"><span id ="student.firstN"></span></p></td>
+            <td><p id="outputFirst"><span id ="output"></span></p><br></td>
         </tr>
-
         <tr>
-            <td>Last Name:<p id="lastNameOutput"><span id ="student.lastN"></span></p></td>
+            <td><p id="outputSortByName"><span id ="students.sort(sortStudentsByName)"></span></p><br></td>
         </tr>
-
         <tr>
-            <td>Student Percentage: <p id="percentOutput"><span id ="student.percentage"></span></p></td>
-
+            <td><p id="outputSortByPercent"><span id ="students.sort(sortStudentsByPercent)"></span></p><br></td>
         </tr>
-
-        <tr>
-            <td>Student Grade:<p id="gradeOutput"><span id ="student.letterGrade"></span></p></td>
-
-        </tr>
-
-
-
-
     </table>
+
+      </form>
 
 
 

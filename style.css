@@ -2,6 +2,7 @@ body {
     background-color: cadetblue;
     color: black;
     font-size: 20px;
+    padding-left: 40px;
 }
 #button {
 
@@ -9,3 +10,17 @@ body {
     color: lightgoldenrodyellow;
     padding: 15px;
 }
+
+#sortName{
+    background-color: darkslateblue;
+    color: lightgoldenrodyellow;
+    padding: 15px;
+
+}
+#sortPercent{
+    background-color: steelblue;
+    color: lightgoldenrodyellow;
+    padding: 15px;
+
+}
+
